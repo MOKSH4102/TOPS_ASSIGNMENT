@@ -1,0 +1,105 @@
+.gridbox {
+    padding              : 50px;
+    display              : grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap                  : 30px;
+}
+img {
+    height        : auto;
+    max-width     : 100%;
+    vertical-align: middle;
+}
+.overlay {
+    border  : 1px solid black;
+    position: relative;
+    overflow: hidden;
+}
+.overlay .text {
+    position     : absolute;
+    display      : grid;
+    place-content: center;
+    overflow     : hidden;
+    transition   : 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+}
+a {
+    text-decoration: none;
+    font-family    : Arial, Helvetica, sans-serif;
+    color          : #730b0b;
+    font-size      : 20px;
+}
+.imgover1 .overlay .text{
+    height          : 0;
+    width           : 100%;
+    left            : 0;
+    right           : 0;
+    /* top          : 0; */
+    bottom          : 0;
+    background-color: #000000ca;
+}
+.imgover1 .overlay:hover .text{
+    height: 100%;
+}
+.imgover2 .overlay .text {
+    height           : 100%;
+    width            : 0;
+    top              : 0;
+    bottom           : 0;
+    left             : 0;
+    /* right         : 0; */
+    background-color : rgba(0, 0, 0, 0.826);
+}
+
+.imgover2 .overlay:hover .text {
+    width: 100%;
+}
+.imgover3 .overlay .text {
+    height          : 100%;
+    width           : 100%;
+    background-color: rgba(0, 0, 0, 0.819);
+    top             : 0;
+    bottom          : 0;
+    left            : 0;
+    right           : 0;
+    transform       : scale(0);
+    border-radius   : 50%;
+}
+
+.imgover3 .overlay:hover .text {
+    transform    : scale(1);
+    border-radius: 0;
+}
+.imgover4 .overlay .text {
+    height: 100%;
+    width : 100%;
+    top   : 0;
+    bottom: 0;
+    left  : 0;
+    right : 0;
+}
+
+.imgover4 .overlay h1 {
+    transform : translateY(400px);
+    transition: 1s ease;
+}
+.imgover4 .overlay:hover .text {
+    background-color: rgba(0, 0, 0, 0.805);
+}
+
+.imgover4 .overlay:hover h1 {
+    transform       : translateY(0);
+    transition-delay: 0.5s;
+}
+.imgover5 .overlay .text {
+    height          : 90%;
+    width           : 90%;
+    background-color: rgba(0, 0, 0, 0.81);
+    top             : 5%;
+    bottom          : 0;
+    left            : 5%;
+    right           : 0;
+    opacity         : 0;
+}
+
+.imgover5 .overlay:hover .text {
+    opacity: 1;
+}

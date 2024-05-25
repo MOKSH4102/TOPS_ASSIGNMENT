@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: linear-gradient(to right,orange,rgb(237, 191, 107));
+        }
+
+        .main {
+            height: 500px;
+            width: 500px;
+            border: 2px solid black;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+
+        img {
+            height: 500px;
+            width: 500px;
+            vertical-align: middle;
+            transform: scale(110%);
+            transition: 0.5s ease-in-out;
+        }
+
+        .main:hover img {
+            transform: scale(100%);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <img src="./img/image-1.jpeg" alt="">
+    </div>
+</body>
+
+</html>

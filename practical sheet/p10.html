@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .mydiv{
+            margin: 10px;
+            border: 2px solid black;
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            gap: 10px;
+            box-shadow: 1px 2px 6px black;
+        }
+        .text{
+            margin: 50px;
+            display: grid;
+            width: 1500px;
+            grid-template-columns: repeat(3,1fr);
+            gap: 50px;
+            vertical-align: middle;
+        }
+       
+        .img1{
+             transform: rotate(350deg); 
+        }
+        .img2{
+            transition: .3s ease;
+        }
+        .img2:hover{
+            transform: skew(7deg);
+        }
+        .img3{
+            transition: .3s ease;
+        }
+        .img3:hover{
+            transform: scaleX(0.8);
+        }
+        .img4{
+            transition: .3s ease;
+        }
+        .img4:hover{
+            transform: scaleY(1.1);
+        }
+        .img5{
+            transition: .3s ease-in-out;
+        }
+        .img5:hover{
+            transform: scaleX(1.1);
+        }
+        .img6{
+            transition: .3s ease-in-out;
+        }
+        .img6:hover{
+            transform: scale(1.1,1.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="mydiv">
+        <div class="text">
+            <div class="img1">
+                <img src="./img/img5.png" alt="">
+            </div>
+            <div class="img2">
+                <img src="./img/img6.png" alt="">
+            </div>
+            <div class="img3">
+                <img src="./img/img3.png" alt="">
+            </div>
+            <div class="img4">
+                <img src="./img/img4.png" alt="">
+            </div>
+            <div class="img5">
+                <img src="./img/img5.png" alt="">
+            </div>
+            <div class="img6">
+                <img src="./img/img6.png" alt="">
+            </div>
+        </div>
+       
+</body>
+</html>

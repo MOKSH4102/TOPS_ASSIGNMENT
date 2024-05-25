@@ -1,0 +1,50 @@
+section{
+    width: 80%;
+    margin: 80px auto;
+}
+
+.row{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    width: 100%;
+    gap: 30px;
+    height: 450px;
+}
+.row .col {
+    border: 2px solid black;
+    vertical-align: middle;
+    
+    /* height: 500px;
+    width: 500px; */
+    
+}
+.row .col img{
+    width: 100%;
+}
+.events .row{
+    margin-top: 50px;
+}
+h4{
+    font-size: 3vmin;
+    color: #484872;
+    margin: 20px auto;
+    text-align: center;
+}
+p{
+    color: #7c7c7c;
+    padding: 0px 10px;
+}
+.col .ctn{
+   margin-left: 150px;
+   border-radius: 30%;
+    cursor: pointer;
+    text-decoration: none;
+    color: whitesmoke;
+    border-radius: 20px;
+    background-color: red;
+    padding: 5px 10px;
+
+}
+.col:hover{
+    box-shadow: 2px 2px 5px black;
+}

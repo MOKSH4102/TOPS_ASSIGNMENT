@@ -1,0 +1,48 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.mydiv{
+    height: 550px;
+    width: 1000px;
+    background-image: linear-gradient(to right,rgb(243, 135, 12),rgb(249, 183, 61));
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+}
+.text{
+    height: 450px;
+    width: 800px;
+    background-color: rgb(21, 136, 236);
+    margin: 50px auto;
+   display: flex;
+   justify-content: flex-start;
+    
+}
+.text .img1 {
+    
+    width: 50%;
+}
+.img1 img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+   
+}
+.img2 h1{
+    color: white;
+    margin-top: 25px;
+    margin-left: 10px;
+}
+.img2 h4{
+    color: whitesmoke;
+    margin: 10px 10px ;
+}
+.img2 input{
+    width: 200px;
+    border: none;
+    background-color: rgb(21, 136, 236);
+    color: whitesmoke;
+    padding-left: 25px;
+}

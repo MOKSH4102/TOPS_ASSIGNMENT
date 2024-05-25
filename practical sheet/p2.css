@@ -1,0 +1,21 @@
+.mydiv{
+    height: 200px;
+    width: 200px;
+    margin: 150px auto;
+    border: 5px solid gray;
+    padding: 50px;
+    border-bottom: 10px solid blue;
+}
+.icon{
+    font-size: 24px;
+}
+.icon span{
+    color: rgb(82, 77, 77);
+}
+.icon i{
+    color: gray;
+}
+.text{
+    margin-top: 20px;
+    color: gray;
+}

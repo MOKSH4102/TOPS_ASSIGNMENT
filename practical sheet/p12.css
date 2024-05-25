@@ -1,0 +1,54 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+.mydiv{
+    height: 650px;
+    width: 1000px;
+    background-image: url(./img/hero\ img.jpg);
+    object-fit: cover;
+    object-position: center;
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+}
+.text{
+    height: 350px;
+    width: 300px;
+    background-color: aliceblue;
+    margin-top: 100px;
+    margin-left: 250px;
+}
+.text h5{
+    display: flex;
+    justify-content: flex-start;
+    color: green;
+    margin-top: 20px;
+    margin-left: 10px;
+}
+.text h3{
+    display: flex;
+    justify-content: flex-start;
+    margin: 20px 0px;
+    margin-left: 9px;
+}
+.text input{
+    margin: 10px 9px;
+    padding: 5px;
+    width: 85%;
+    border-radius: 10px;
+}
+.btn{
+    display: flex;
+    justify-content: flex-start;
+    margin: 10px 9px;
+}
+.btn button{
+    padding: 5px ;
+    width: 90%;
+    background-color: green;
+    color: whitesmoke;
+    cursor: pointer;
+    border-radius: 10px;
+}

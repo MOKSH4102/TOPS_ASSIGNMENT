@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: linear-gradient(to right,orange,rgb(237, 191, 107));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            height: 500px;
+            width: 500px;
+            border: 1px solid black;
+            position: relative;
+            margin: 100px  auto;
+
+        }
+
+        img {
+            max-width: 100%;
+            height: 500px;
+            vertical-align: middle;
+        }
+
+        .main .black {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.636);
+            display: grid;
+            place-content: center;
+            height: 100%;
+            width: 0;
+            transition: 0.4s ease-in-out;
+            color: white;
+            font-size: 18px;
+            overflow: hidden;
+        }
+
+        .main:hover .black {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="image">
+            <img src="./img/image-1.jpeg" alt="">
+        </div>
+        <div class="black">
+            <div class="text">
+                <h1>Image Overlay</h1>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

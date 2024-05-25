@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: linear-gradient(to right,orange,rgb(237, 191, 107));
+        }
+
+        * {
+            margin: 0;
+            padding-top: 0px;
+        }
+
+        .mydiv {
+            height: 500px;
+            width: 500px;
+            border: 1px solid black;
+            position: relative;
+            margin:100px auto;
+        }
+
+        img {
+            max-width: 100%;
+            height: 500px;
+            vertical-align: middle;
+            
+        }
+
+        .mydiv .overlay {
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.636);
+            display: grid;
+            place-content: center;
+            height: 0;
+            width: 100%;
+            transition: 0.4s ease-in-out;
+            color: white;
+            font-size: 18px;
+            overflow: hidden;
+        }
+
+        .mydiv:hover .overlay {
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mydiv">
+        <div class="image">
+            <img src="./img/image-1.jpeg" alt="">
+        </div>
+        <div class="overlay">
+            <div class="text">
+                <h1>Image Overlay</h1>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

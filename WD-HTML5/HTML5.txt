@@ -1,0 +1,76 @@
+(1) What are the new tags added in HTML5?
+
+=> HTML Tag	Description
+<article>	Represents an independent article with content separate from the rest of the site.
+<aside>	    Describes content related to the main object of the web page but not its main intent.
+<audio>
+
+Used to insert audio into an HTML webpage.
+<canvas>	Used to draw graphics on a web page using JavaScript.
+<command>	Defines a command button for special operations (supported only by Internet Explorer).
+<datalist>	Provides autocomplete feature for input elements.
+<details>	Used for initially hidden content that can be displayed interactively.
+<embed>	Embeds external multimedia content like audio or video into an HTML document.
+<figure>	Adds self-contained content like illustrations, diagrams, or photos.
+<footer>	Defines a footer containing information like author details and copyright.
+<header>	Contains information related to the title and heading of the content.
+<hgroup>	Groups heading elements (h1-h6) to provide structured heading information.
+<keygen>	Specifies a key-pair generator field in a form for secure user authentication.
+<mark>	Defines marked text to highlight a part of the paragraph.
+
+(2) How to embed audio and video in a webpage?
+
+=> Syntax:
+<audio>
+    <source src="file_name" type="audio_file_type">
+</audio>
+
+ex: <!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+<h2>Click play button to play audio</h2>
+<audio src="./test.mp3" controls></audio>
+</body>
+</html>
+
+=> video Syntax: <video>
+    <source src="file_name" type="video_file_type">
+</video>
+
+ex: <!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+<h2>Click play button to play video</h2>
+<video src="./test.mp4" controls></video>
+</body>
+</html>
+
+(3) Semantic element in HTML5?
+
+=> <article>
+<aside>
+<details>
+<figcaption>
+<figure>
+<footer>
+<header>
+<main>
+<mark>
+<nav>
+<section>
+<summary>
+<time>
+
+(4) Canvas and SVG tags
+
+=> SVG (Scalable Vector Graphics) and Canvas are both web standards that can be used to draw in web browsers and create engaging web experiences. They have different uses and capabilities:
+SVG
+Uses geometric shapes to render vector images that are resolution independent, meaning they can be scaled up or down without losing quality. SVG is good for logos, icons, vector art, and complex data visualizations like fractals and Mandelbrot sets. SVG images can be created and edited with any text editor, and they're available for DOM events like click and mouseDown.
+Canvas
+Uses pixels to render raster graphics that are resolution dependent. Canvas is good for drawing shapes and images on web pages, making interactive games, animations, and visualizations. Canvas is a JavaScript drawing API, and you can access the canvas element with JavaScript to draw on it. However, once a graphic is drawn in Canvas, the browser forgets it, so if you need to change its position, you'll need to redraw the entire scene.

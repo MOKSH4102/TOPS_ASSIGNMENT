@@ -1,76 +1,137 @@
 (1) What are the new tags added in HTML5?
 
-=> HTML Tag	Description
-<article>	Represents an independent article with content separate from the rest of the site.
-<aside>	    Describes content related to the main object of the web page but not its main intent.
-<audio>
+=> New Elements
+<article>: Represents an independent article with content separate from the rest of the site.
+<aside>: Describes content related to the main object of the web page but not its main intent.
+<audio>: Used to insert audio into an HTML webpage.
+<canvas>: Used to draw graphics on a web page using JavaScript.
+<command>: Defines a command button for special operations (supported only by Internet Explorer).
+<datalist>: Provides autocomplete feature for input elements.
+<details>: Used for initially hidden content that can be displayed interactively.
+<embed>: Embeds external multimedia content like audio or video into an HTML document.
+<figure>: Adds self-contained content like illustrations, diagrams, or photos.
+<footer>: Defines a footer containing information like author details and copyright.
+<header>: Contains information related to the title and heading of the content.
+<hgroup>: Groups heading elements (h1-h6) to provide structured heading information.
+<keygen>: Specifies a key-pair generator field in a form for secure user authentication.
+<mark>: Defines marked text to highlight a part of the paragraph.
+<meter>: Defines a scale for measurement with a well-defined range, used as a gauge.
+<nav>: Declares the navigational section of HTML documents.
+<output>: Represents the result of a client-side script calculation.
+<progress>: Represents the progress of a task or download.
+<ruby>: Specifies ruby annotations used in Japanese publications.
+<section>: Defines a section of documents, dividing content into sections and subsections.
+<time>: Displays human-readable date/time and encodes dates/times in a machine-readable form.
+<wbr>: Defines a word break opportunity, used for line breaks in long words.
+<video>: Embeds video content such as movie clips in a document.
 
-Used to insert audio into an HTML webpage.
-<canvas>	Used to draw graphics on a web page using JavaScript.
-<command>	Defines a command button for special operations (supported only by Internet Explorer).
-<datalist>	Provides autocomplete feature for input elements.
-<details>	Used for initially hidden content that can be displayed interactively.
-<embed>	Embeds external multimedia content like audio or video into an HTML document.
-<figure>	Adds self-contained content like illustrations, diagrams, or photos.
-<footer>	Defines a footer containing information like author details and copyright.
-<header>	Contains information related to the title and heading of the content.
-<hgroup>	Groups heading elements (h1-h6) to provide structured heading information.
-<keygen>	Specifies a key-pair generator field in a form for secure user authentication.
-<mark>	Defines marked text to highlight a part of the paragraph.
+=> HTML5 Form Tags
+<datalist>: Represents a predefined list for input options.
+<output>: Used as a container to display calculation results or user action outcomes.
+
+=> Graphics Tags
+<canvas>: Allows drawing graphics and animations with scripting.
+<svg>: Used for scalable vector graphics.
+
+=> HTML5 New <input> Types
+color: Represents an input field for selecting a color.
+date: Represents a date input field.
 
 (2) How to embed audio and video in a webpage?
 
-=> Syntax:
-<audio>
-    <source src="file_name" type="audio_file_type">
+=> audio tag:
+<audio controls>
+  <source src="myAudio.mp3" type="audio/mpeg" />
+  <source src="myAudio.ogg" type="audio/ogg" />
+  <p>
+    Download <a href="myAudio.mp3">MP3</a> or
+    <a href="myAudio.ogg" download="myAudio.ogg">OGG</a> audio.
+  </p>
 </audio>
 
-ex: <!DOCTYPE html>
-<html>
-<head>
-<title>Page Title</title>
-</head>
-<body>
-<h2>Click play button to play audio</h2>
-<audio src="./test.mp3" controls></audio>
-</body>
-</html>
-
-=> video Syntax: <video>
-    <source src="file_name" type="video_file_type">
+=> video tag:
+<video controls width="720" height="405">
+  <source src="video.mp4" type="video/mp4" />
+  <source src="video.webm" type="video/webm" />
+  <p>
+    Your browser doesn't support this video. Here is a
+    <a href="video.mp4">link to the video</a> instead.
+  </p>
 </video>
-
-ex: <!DOCTYPE html>
-<html>
-<head>
-<title>Page Title</title>
-</head>
-<body>
-<h2>Click play button to play video</h2>
-<video src="./test.mp4" controls></video>
-</body>
-</html>
 
 (3) Semantic element in HTML5?
 
-=> <article>
-<aside>
-<details>
-<figcaption>
-<figure>
-<footer>
-<header>
-<main>
-<mark>
-<nav>
-<section>
-<summary>
-<time>
+=> Here are some of the most commonly used semantic elements in HTML5:
+
+<header>: Defines the header section of a document or section, typically containing the title, logo, and navigation.
+<nav>: Defines a section of navigation links, such as a menu or a list of links.
+<main>: Defines the main content section of a document, which should contain the primary content of the page.
+<section>: Defines a self-contained section of related content, such as a chapter or a topic.
+<article>: Defines an independent piece of content, such as a blog post or a news article.
+<aside>: Defines a piece of content that is related to the main content, but not essential to it, such as a sidebar or a call-out box.
+<footer>: Defines the footer section of a document or section, typically containing copyright information, contact details, and links.
+<figure>: Defines a figure or an image, along with a caption.
+<figcaption>: Defines a caption for a figure or an image.
+<time>: Defines a specific date or time, in a machine-readable format.
+<mark>: Defines a highlighted or marked section of text.<ruby>, <rt>, and <rp>: Define ruby annotations, which are used to provide pronunciation guidance for East Asian languages.
+
+=> Using semantic elements in HTML5 provides several benefits, including:
+
+Improved search engine optimization (SEO), as search engines can better understand the structure and content of the page.
+Better accessibility, as screen readers and other assistive technologies can provide a more accurate and helpful experience for users with disabilities.
+Easier maintenance and updates, as the structure of the page is more clearly defined.
+Improved readability and usability, as the page is more organized and easier to navigate.
+
+ex: <!DOCTYPE html>
+<html>
+<head>
+  <title>My Web Page</title>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h1>Welcome to my web page!</h1>
+      <p>This is a sample paragraph of text.</p>
+    </section>
+    <aside>
+      <h2>Related links</h2>
+      <ul>
+        <li><a href="#">Link 1</a></li>
+        <li><a href="#">Link 2</a></li>
+      </ul>
+    </aside>
+  </main>
+  <footer>
+    <p>&copy; 2024 My Web Page</p>
+  </footer>
+</body>
+</html>
 
 (4) Canvas and SVG tags
 
-=> SVG (Scalable Vector Graphics) and Canvas are both web standards that can be used to draw in web browsers and create engaging web experiences. They have different uses and capabilities:
-SVG
-Uses geometric shapes to render vector images that are resolution independent, meaning they can be scaled up or down without losing quality. SVG is good for logos, icons, vector art, and complex data visualizations like fractals and Mandelbrot sets. SVG images can be created and edited with any text editor, and they're available for DOM events like click and mouseDown.
-Canvas
-Uses pixels to render raster graphics that are resolution dependent. Canvas is good for drawing shapes and images on web pages, making interactive games, animations, and visualizations. Canvas is a JavaScript drawing API, and you can access the canvas element with JavaScript to draw on it. However, once a graphic is drawn in Canvas, the browser forgets it, so if you need to change its position, you'll need to redraw the entire scene.
+=> Canvas
+
+The <canvas> tag is used to create a drawing surface on which you can use JavaScript to draw graphics, shapes, and text. The <canvas> element itself does not have any content or children, but you can use JavaScript to draw on it using the Canvas API.
+
+<canvas id="myCanvas" width="500" height="300"></canvas>
+
+=> SVG
+
+The <svg> tag is used to create scalable vector graphics (SVGs) in HTML5. Unlike the <canvas> tag, the <svg> tag is an XML-based markup language that allows you to define shapes, paths, and text using XML elements and attributes.
+
+EX: <svg width="500" height="300">
+  <circle cx="60" cy="60" r="50" fill="blue" />
+</svg>
+
+=> Raster vs. Vector: <canvas> is raster-based, meaning it's composed of pixels, while <svg> is vector-based, meaning it's composed of shapes and paths defined by math.
+Scripting: <canvas> can only be modified through script, while <svg> can be modified through both script and XML attributes.
+Scalability: <svg> is scalable, meaning it can be resized without losing quality, while <canvas> is not scalable.

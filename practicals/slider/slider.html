@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="slider.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+    <h1>Simple JavaScript Slider</h1>
+    <div class="main">
+        <div class="card-maker">
+            <ul class="card-container">
+                <li class="box box1 b1">Box 1</li>
+                <li class="box box2 b2">Box 2</li>
+                <li class="box box3 b3">Box 3</li>
+                <li class="box box4 b4">Box 4</li>
+                <li class="box box5 b5">Box 5</li>
+                <li class="box box6 b6 box_hide">Box 6</li>
+                <li class="box box7 b7 box_hide">Box 7</li>
+            </ul>
+        </div>
+    </div>
+    <div class="btn">
+        <div class="button" onclick="leftmove()"><i class="fa-solid fa-arrow-left"></i></div>
+        <div class="button" onclick="rightmove()"><i class="fa-solid fa-arrow-right"></i></div>
+    </div>
+
+    <script>
+        function leftmove() {
+            const boxes = document.querySelectorAll(".box");
+            const counted = boxes[0];
+            boxes[0].className = "box outleft";
+
+            setTimeout(function () {
+                if (boxes.length > 5) {
+                    counted.classList.add("box_hide");
+                    boxes[5].className = "box b5 outfromP5left";
+                }
+                boxes[1].className = "box b1 outfromP1left"
+                boxes[2].className = "box b2 outfromP2left"
+                boxes[3].className = "box b3 outfromP3left"
+                boxes[4].className = "box b4 outfromP4left"
+                boxes[0].remove();
+
+                document.querySelector(".card-container").appendChild(counted);
+
+            }, 500);
+        }
+        // =======================================================================================
+        function rightmove() {
+            const boxes = document.querySelectorAll(".box");
+            boxes[4].className = "box outright";
+
+            setTimeout(function () {
+                const numofb = boxes.length;
+                if (numofb > 4) {
+                    boxes[4].className = "box box_hide";
+                }
+                const count = boxes[numofb - 1];
+                count.classList.remove("box_hide");
+                boxes[numofb - 1].remove();
+                let myobj = document.querySelector(".card-container");
+                myobj.insertBefore(count, myobj.firstChild);
+                count.className = "box b1 outfromP1right";
+                boxes[0].className = "box b2 outfromP2right";
+                boxes[1].className = "box b3 outfromP3right";
+                boxes[2].className = "box b4 outfromP4right";
+                boxes[3].className = "box b5 outfromP5right";
+            }, 500);
+        }
+    </script>
+</body>
+
+</html>

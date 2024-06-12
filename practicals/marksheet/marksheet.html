@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+  width: 600px;
+  margin: 50px auto;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.marksheet {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.text{
+   font-size: 20px;
+   text-align: center;
+   margin: 30px auto;
+}
+
+.marksheet .subject {
+  font-weight: bold;
+  width: 250px;
+}
+
+.marksheet .marks {
+  width: 280px;
+  text-align: center;
+  margin-right: 20px;
+}
+
+.marksheet .marks input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.result {
+  text-align: center;
+  margin-top: 30px;
+  padding: 10px;
+  font-size: 25px;
+}
+
+.result button {
+  background-color: #3a9afb;
+  font-size: 18px;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.result p {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.result p span {
+  font-weight: bold;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Marksheet for Information Technology</h1>
+        <div class="text"> Enter Marks</div>
+        <div class="marksheet">
+          <div class="subject">1. C Language</div>
+          <div class="marks"><input type="number" id="c-marks" ></div>
+        </div>
+        <div class="marksheet">
+          <div class="subject">2. C++ Language</div>
+          <div class="marks"><input type="number" id="cpp-marks"></div>
+        </div>
+        <div class="marksheet">
+          <div class="subject">3. Database</div>
+          <div class="marks"><input type="number" id="db-marks" ></div>
+        </div>
+        <div class="marksheet">
+          <div class="subject">4. HTML</div>
+          <div class="marks"><input type="number" id="html-marks" ></div>
+        </div>
+        <div class="marksheet">
+          <div class="subject">5. CSS</div>
+          <div class="marks"><input type="number" id="css-marks" ></div>
+        </div>
+        <div class="marksheet">
+          <div class="subject">6. php</div>
+          <div class="marks"><input type="number" id="php-marks" ></div>
+        </div>
+        <div class="marksheet">
+          <div class="subject">7. Core java</div>
+          <div class="marks"><input type="number" id="java-marks" ></div>
+        </div>
+        <div class="result">
+          <button onclick="calculateResult()">Result</button>
+          <p>Total is: <span id="total"></span> / 350</p>
+          <p>Percentage is: <span id="percentage"></span>%</p>
+        </div>
+      </div>
+      <script>
+      function calculateResult() {
+        var cMarks = parseInt(document.getElementById('c-marks').value);
+        var cppMarks = parseInt(document.getElementById('cpp-marks').value);
+        var dbMarks = parseInt(document.getElementById('db-marks').value);
+        var htmlMarks = parseInt(document.getElementById('html-marks').value);
+        var cssMarks = parseInt(document.getElementById('css-marks').value);
+        var phpMarks = parseInt(document.getElementById('php-marks').value);
+        var javaMarks = parseInt(document.getElementById('java-marks').value);
+      
+        var totalMarks = cMarks + cppMarks + dbMarks + htmlMarks + cssMarks + phpMarks + javaMarks;
+        var percentage = (totalMarks / 350) * 100;
+      
+        document.getElementById('total').innerHTML = totalMarks;
+        document.getElementById('percentage').innerHTML = percentage.toFixed(2);
+      }
+      </script>
+</body>
+</html>

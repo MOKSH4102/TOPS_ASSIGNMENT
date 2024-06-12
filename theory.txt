@@ -1,0 +1,237 @@
+(1) What is JavaScript. How to use it? 
+
+=> JavaScript is a high-level, interpreted programming language that is used to make web pages interactive. It is one of the three core technologies of World Wide Web content production (along with HTML and CSS).
+=> To use JavaScript on a web page, you need to include a reference to the JavaScript file in the HTML code. This is done using the <script> tag.
+
+(2) How many type of Variable in JavaScript? 
+
+=> There are three types of variables in JavaScript:
+var
+- This is the oldest and most common way to declare a variable. Variables declared with var are function-scoped, which means they are accessible anywhere within the function in which they are declared.
+let
+- This is a newer way to declare a variable. Variables declared with let are block-scoped, which means they are only accessible within the block of code in which they are declared.
+const
+- This is a newer way to declare a constant. Constants are variables that cannot be reassigned.
+
+(3) Define a Data Types in js?
+
+=> Primitive data types are the most basic data types in JavaScript. They are:
+String: A string is a sequence of characters.
+Number: A number is a numeric value.
+Boolean: A boolean is a value that can be either true or false.
+Undefined: The undefined value is used to indicate that a variable has not been assigned a value.
+Null: The null value is used to indicate that a variable has no value.
+=> Non-primitive data types are more complex data types that can store multiple values. They are:
+Object: An object is a collection of properties and methods.
+Array: An array is an ordered list of values.
+Function: A function is a block of code that can be executed.
+
+(4) Write a mul Function Which will Work Properly When invoked With Following Syntax. 
+
+=> The MUL function is a miniature of the multiplication function. In this function, we call the function that required an argument as a first number, and that function calls another function that required another argument and this step goes on.
+
+=> syntax: function mul(x) {
+    return function (y) {
+    return function (z) {
+      return x * y * z;
+    };
+  };
+}
+
+(5)  What the deference between undefined and undeclare in JavaScript?
+
+=> Undefined: It occurs when a variable has been declared but has not been assigned any value. Undefined is not a keyword. 
+
+=> Undeclared: It occurs when we try to access any variable that is not initialized or declared earlier using the var or const keyword.
+
+(10) What is Condition Statement? 
+
+=> A conditional statement in JavaScript is a statement that controls the flow of execution of a program based on a certain condition. The most common type of conditional statement is the if statement.
+
+=> Syntax: if (condition) {
+  // code to be executed if condition is true
+} else {
+  // code to be executed if condition is false
+}
+
+(15) What is the result of the expression (5 > 3 && 2 < 4)? 
+
+=> the result of the expression is true
+
+(16) What is the result of the expression (true && 1 && "hello")?
+
+=> the result of expression is hello because all the values are true so last truly value print
+
+(17) What is the result of the expression true && false || false && true?
+
+=> If the answer is yes, then it returns true. in any other case, it returns false.
+
+(18) What is a Loop and Switch Case in JavaScript define that ? 
+
+=> switch(expression) {
+  case x:
+    // code block
+    break;
+  case y:
+    // code block
+    break;
+  default:
+    // code block
+}
+
+(19) What is the use of is Nan function? 
+
+=> NaN stands for "Not a Number" and is a value in JavaScript used to represent an undefined or unrepresentable value.
+
+(20) What is the difference between && and || in JavaScript?
+
+=> The && operator returns true if both operands are truthy, and false otherwise. It has the following behavior:
+
+If the first operand is falsy, the && operator short-circuits and returns the first operand without evaluating the second operand.
+If the first operand is truthy, the && operator returns the second operand.
+
+=> The || operator returns the first truthy operand, or the last operand if all operands are falsy. It has the following behavior:
+
+If the first operand is truthy, the || operator short-circuits and returns the first operand without evaluating the second operand.
+If the first operand is falsy, the || operator returns the second operand.
+
+(21) What is the use of Void (0)?
+
+=> The void operator evaluates an expression and returns undefined . By running void(0) in the URL JavaScript code, nothing is evaluated or returned.
+
+(22) Check Number Is Positive or Negative in JavaScript?
+
+=> if (values > 0) {
+    // Do Something
+}
+(30)  What are the looping structures in JavaScript? Any one Example?
+
+=> for loop
+  while loop
+  do..while loop
+  for of loop
+  for in loop
+
+=> ex: Example of for loop: 
+  for (let i = 0; i < 5; i++) {
+  text += "The number is " + i + "<br>";
+}
+
+(47) What is the drawback of declaring methods directly in JS object?
+
+=> Code Duplication: If you create multiple instances of an object using the same
+method, the method is duplicated for each instance. This can lead to increased
+memory usage and redundancy.
+- Limited Reusability: Methods declared directly in an object are specific to that
+object. If you want to reuse the same method in a different context or for a different
+object, you need to duplicate the method or use alternative techniques like
+inheritance.
+- Less Encapsulation: Declaring methods directly in an object may expose the
+implementation details of an object. This could potentially lead to unintended
+modifications or interference with the object's internal state.
+
+(50) What is the drawback of declaring methods directly in JavaScript objects? 
+
+=> Memory usage
+When you declare a method directly in an object, a new function object is created for each instance of the object. This can lead to increased memory usage, especially if you have a large number of objects.
+
+Performance
+Creating a new function object for each instance of an object can also impact performance, especially if you're creating a large number of objects.
+
+Inheritance
+When you declare a method directly in an object, it's not possible to inherit that method from a parent object. This can make it difficult to create a hierarchy of objects with shared behavior.
+
+Code organization
+Declaring methods directly in objects can make the code harder to read and maintain, especially if the object has a large number of methods.
+
+Lack of encapsulation
+Declaring methods directly in objects can make it harder to encapsulate the object's behavior, as the methods are exposed directly on the object.
+
+Difficulty in testing
+Declaring methods directly in objects can make it harder to test the object's behavior, as the methods are tightly coupled to the object.
+
+(54) Form Validtion in JS?
+
+=> Used to validate the form submitted by the user because it can have inappropriate
+values. So, validation is must to authenticate user.
+- JS provides facility to validate the form on the client-side so data processing will be
+faster than server-side validation. Most of the web developers prefer JS form
+validation.
+- We can validate name, password, email, date, mobile number and other field.
+
+(57) how many type of JS Event? How to use it? 
+
+=> click: triggered when the user clicks an element
+dblclick: triggered when the user double-clicks an element
+mousedown: triggered when the user presses a mouse button
+mouseup: triggered when the user releases a mouse button
+mouseover: triggered when the user moves the mouse over an element
+mouseout: triggered when the user moves the mouse out of an element
+mousemove: triggered when the user moves the mouse over an element
+
+=> ex: <button id="myButton" onclick="console.log('Button clicked!')">Click me!</button>
+
+(58)  What is Bom vs Dom in JS?
+
+=> BOM (Browser Object Model)
+
+The BOM represents the browser's window and provides access to browser-related features such as managing windows, cookies, and URLs. It allows developers to manipulate the browser's behavior and interact with the user.
+
+=> DOM (Document Object Model)
+
+The DOM represents the structure of an HTML or XML document as a tree-like structure. It allows developers to manipulate and interact with the document's elements, such as modifying content, styles, and attributes.
+
+(59)  Array vs object defences in JS? 
+
+=> Array
+
+The data inside an array is known as Elements.
+
+Arrays are best to use when the elements are numbers.
+
+=> Array of objects
+
+Objects are best to use when the elements’ strings (text).
+
+The data inside objects are known as Properties which consists of a key and a value.
+
+(66) What is negative Infinity?
+
+=> Literal notation: You can use the literal notation -Infinity to represent negative infinity.
+Type: -Infinity is a number type in JavaScript, specifically a special value of the Number type.
+
+(67) Which company developed JavaScript?
+
+=> JavaScript was developed by Brendan Eich, a programmer at Netscape Communications Corporation, in 1995. 
+
+(68) What are undeclared and undefined variables?
+
+=> Undeclared Variables
+
+An undeclared variable is a variable that has not been declared or defined in the current scope. In other words, it's a variable that doesn't exist in the current context.
+
+(69) Write the code for adding new elements dynamically?
+
+=> addButton.addEventListener('click', () => {
+  const newElement = `<p>New element ${Math.random()}</p>`;
+  container.insertAdjacentHTML('beforeend', newElement);
+});
+
+(70) What is the difference between ViewState and SessionState?
+
+=> ViewState:
+
+ViewState is a mechanism in ASP.NET that allows the state of a web page to be persisted between postbacks. When a user interacts with a web page, the page's state is stored in a hidden field called __VIEWSTATE. This field is sent back to the server on each postback, allowing the server to recreate the page's state.
+
+=> SessionState:
+
+SessionState is a mechanism in ASP.NET that allows data to be stored and retrieved for a user's entire session. A session is a series of requests from a single user, and SessionState is used to store data that needs to be accessed across multiple pages.
+
+(71) What are the disadvantages of using innerHTML in JavaScript?
+
+=> Security risks: innerHTML can be vulnerable to XSS (Cross-Site Scripting) attacks. If you're inserting user-generated content into the page using innerHTML, an attacker could inject malicious scripts into your page. To mitigate this, use textContent or DOMPurify instead.
+
+
+=> Performance: innerHTML can be slow, especially when dealing with large amounts of HTML. This is because it involves parsing the HTML string, creating new DOM elements, and inserting them into the page. In contrast, using appendChild or insertAdjacentHTML can be faster.
+
+

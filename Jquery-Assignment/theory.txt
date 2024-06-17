@@ -1,0 +1,40 @@
+(1) What is jQuery?
+
+=> jQuery is a fast, small, and feature-rich JavaScript library. It's designed to make HTML document traversing and manipulation, event handling, animation, and Ajax much simpler with an easy-to-use API that works across a multitude of browsers.
+
+=> jQuery takes a lot of common tasks that require many lines of JavaScript code to accomplish and wraps them into methods that you can call with a single line of code. jQuery also simplifies a lot of complicated JavaScript tasks like HTML document traversal and manipulation, event handling, animation, and Ajax.
+
+=> Here are some of the things you can do with jQuery:
+Select and manipulate HTML elements
+Create animations
+Handle events
+Make Ajax requests
+Work with CSS
+
+(2) How to Apply CSS Using JQuery, How to Add Class and Remove Class in Jquery ,
+JQuery Animation?
+
+=>  apply CSS using Jquery: 
+$("#myId").css("background-color", "red");
+
+
+var backgroundColor = $("#myId").css("background-color");
+
+=> Add class using Jquery:
+
+
+$("#myId").addClass("myClass");
+
+=> remove class using jquery: 
+
+
+$("#myId").removeClass("myClass");
+
+=> Jquery Animation:
+
+$("#myId").animate({
+  width: 300
+}, 500, function() {
+  // Animation complete
+});
+

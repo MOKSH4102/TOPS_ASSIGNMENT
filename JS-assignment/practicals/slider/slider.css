@@ -123,61 +123,62 @@ u{
 .box:nth-child(3) {
     transform: scale(1.25);
     margin: 20px;
+    transition: 0.9s ease-in-out;
     /* z-index: -2; */
 }
 
 /* ------------------------------------------------------------------------*/
 
 .outleft {
-    animation: moveoutleft 0.5s ease-in-out;
+    animation: moveoutleft 0.9s ease-in-out;
 }
 
 .outright {
-    animation: moveoutright 0.5s ease-in-out;
+    animation: moveoutright 0.9s ease-in-out;
 }
 
 /* ----------------------------------------------------------*/
 /* Left Side */
 .outfromP5left {
-    animation: moveToP5Left 0.5s ease-in-out;
+    animation: moveToP5Left 0.9s ease-in-out;
 }
 
 .outfromP4left {
-    animation: moveToP4Left 0.5s ease-in-out;
+    animation: moveToP4Left 0.9s ease-in-out;
 }
 
 .outfromP3left {
-    animation: moveToP5Left 0.5s ease-in-out;
+    animation: moveToP5Left 0.9s ease-in-out;
 }
 
 .outfromP2left {
-    animation: moveToP2Left 0.5s ease-in-out;
+    animation: moveToP2Left 0.9s ease-in-out;
 }
 
 .outfromP1left {
-    animation: moveToP1Left 0.5s ease-in-out;
+    animation: moveToP1Left 0.9s ease-in-out;
 }
 
 /* ------------------------------------------------------------------------ */
 /* Right Side */
 .outfromP1right {
-    animation: moveToP1Right 0.5s ease-in-out;
+    animation: moveToP1Right 0.9s ease-in-out;
 }
 
 .outfromP2right {
-    animation: moveToP2Right 0.5s ease-in-out;
+    animation: moveToP2Right 0.9s ease-in-out;
 }
 
 .outfromP3right {
-    animation: moveToP3Right 0.5s ease-in-out;
+    animation: moveToP3Right 0.9s ease-in-out;
 }
 
 .outfromP4right {
-    animation: moveToP4Right 0.5s ease-in-out;
+    animation: moveToP4Right 0.9s ease-in-out;
 }
 
 .outfromP5right {
-    animation: moveToP5Right 0.5s ease-in-out;
+    animation: moveToP5Right 0.9s ease-in-out;
 }
 
 /* ======================================================================== */

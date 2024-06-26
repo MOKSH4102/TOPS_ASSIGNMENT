@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration form</title>
+    <style>
+        .mydiv {
+
+            height: 700px;
+            width: 952px;
+            margin: auto;
+        }
+
+        div {
+            height: 50px;
+            width: 100%;
+            background-color: aliceblue;
+        }
+
+        input {
+            height: auto;
+            width: 70%;
+            margin-left: 20px;
+        }
+
+        label {
+            margin-left: 20px;
+        }
+
+        .l_name label {
+            margin-left: 20px;
+        }
+
+        .l_name input {
+            margin-left: 23px;
+        }
+
+        .e_mail input {
+            margin-left: 50px;
+        }
+
+        .m_number input {
+            margin-left: 40px;
+        }
+
+        .gender {
+            display: block;
+        }
+
+        .gender input {
+            width: 20px;
+            align-items: center;
+        }
+
+        .birth input {
+            margin-left: 5px;
+        }
+
+        .add textarea {
+            margin-left: 34px;
+        }
+
+        .add {
+            height: 60px;
+        }
+
+        .city input {
+            margin-left: 55px;
+        }
+
+        .pin input {
+            margin-left: 25px;
+        }
+
+        .state input {
+            margin-left: 50px;
+        }
+
+        .check {
+            display: block;
+        }
+
+        .check input {
+            width: 20px;
+        }
+
+        .password input {
+            margin-left: 23px;
+        }
+
+        .btn {
+            background-color: rgb(5, 76, 18);
+            color: white;
+            cursor: pointer;
+            padding: 5px;
+            margin-left: 15px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mydiv">
+        <div class="f_name">
+            <label for="">First Name :</label>
+            <input type="text" placeholder="First name" id="fname">
+        </div>
+        <div class="l_name">
+            <label for="">Last name :</label>
+            <input type="text" placeholder="Last Name" id="lname">
+        </div>
+        <div class="e_mail">
+            <label for="">Email :</label>
+            <input type="email" name="Email" id="email" placeholder="Email">
+        </div>
+        <div class="m_number">
+            <label for="">Mobile :</label>
+            <input type="text" placeholder="enter 10 digit number" id="mobile" minlength="10" maxlength="10"
+                id="mobile">
+        </div>
+        <div class="gender">
+            <label for="">Gender :</label>
+            <input type="radio" value="male" name="gender" id="m">male
+            <input type="radio" value="female" name="gender" id="f">female
+        </div>
+        <div class="birth">
+            <label for="">Date of birth :</label>
+            <input type="date" id="dob">
+        </div>
+        <div class="add">
+            <label for="">Address :</label>
+            <textarea name="Address" id="address" rows="2" cols="88" placeholder="Address" id="address"></textarea>
+        </div>
+        <div class="city">
+            <label for="">City :</label>
+            <input type="text" placeholder="enter your city" id="city">
+        </div>
+        <div class="pin">
+            <label for="">Area Pin :</label>
+            <input type="text" placeholder="Enter your pincode" id="pincode" minlength="6" maxlength="6">
+        </div>
+        <div class="state">
+            <label for="">State :</label>
+            <input type="text" placeholder="enter your state" id="state">
+        </div>
+        <div>
+            <label for=""> Qualification :</label>
+            <select id="qualification">
+                <option value="select">--select--</option>
+                <option value="bechlor's">bechlor's</option>
+                <option value="master's">master's</option>
+                <option value="PHD">PHD</option>
+            </select>
+        </div>
+        <div class="check">
+            <label for="">Specilization :</label>
+            <input type="checkbox" id="cs"> Computer Science
+            <input type="checkbox" id="it"> information technology
+            <input type="checkbox" id="ds"> Data Science
+            <input type="checkbox" id="ca"> Computer Architecture
+        </div>
+        <div class="password">
+            <label for="">Password :</label>
+            <input type="password" placeholder="enter your password" id="pass">
+        </div>
+        <button class="btn" onclick=" return menu()">Registered</button>
+    </div>
+    <script src="register.js"></script>
+
+</body>
+
+</html>

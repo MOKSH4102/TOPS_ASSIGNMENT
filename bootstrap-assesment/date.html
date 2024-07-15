@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Date Interval Calculator</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+<script>
+$(document).ready(function() {
+  $('#from_date').datepicker({
+    format: 'mm/dd/yyyy'
+  });
+  $('#to_date').datepicker({
+    format: 'mm/dd/yyyy'
+  });
+
+  $('#calculate').click(function() {
+    var fromDate = new Date($('#from_date').val());
+    var toDate = new Date($('#to_date').val());
+    
+    // Calculate the difference in milliseconds
+    var diff = toDate - fromDate;
+
+    // Calculate the difference in days, weeks, months, and years
+    var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    var weeks = Math.floor(days / 7);
+    var months = Math.floor(days / 30);
+    var years = Math.floor(days / 365);
+
+    // Display the results
+    $('#results').html('<h2>Date Interval Between ' + $('#from_date').val() + ' and ' + $('#to_date').val() + '</h2>' + 
+                       '<p>In years: ' + Math.abs(years) + '</p>' +
+                       '<p>In months: ' + months + '</p>' +
+                       '<p>In weeks: ' + weeks + '</p>' +
+                       '<p>In days: ' + days + '</p>');
+  });
+});
+</script>
+</head>
+<body>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <h1>Date Interval Calculator</h1>
+      <div class="form-group">
+        <label for="from_date">From:</label>
+        <input type="text" class="form-control" id="from_date">
+      </div>
+      <div class="form-group">
+        <label for="to_date">To:</label>
+        <input type="text" class="form-control" id="to_date">
+      </div>
+      <button id="calculate" class="btn btn-primary">Calculate</button>
+      <div id="results" style="background-color: aqua;"></div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

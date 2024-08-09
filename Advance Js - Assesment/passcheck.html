@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Checker</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .password-input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        .strength-indicator {
+            padding: 5px 10px;
+            border-radius: 5px;
+            color: white;
+            font-weight: bold;
+        }
+
+        .weak {
+            background-color: #f08080; /* Light red for weak */
+        }
+
+        .medium {
+            background-color: #ffcc00; /* Yellow for medium */
+        }
+
+        .strong {
+            background-color: #90ee90; /* Light green for strong */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Password Checker jQuery</h1>
+        <input type="password" class="password-input" placeholder="Enter your password">
+        <div class="strength-indicator weak">Weak</div>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $('.password-input').on('input', function() {
+                var password = $(this).val();
+                var strength = checkPasswordStrength(password);
+
+                $('.strength-indicator').removeClass('weak medium strong');
+                $('.strength-indicator').addClass(strength);
+                $('.strength-indicator').text(strength.charAt(0).toUpperCase() + strength.slice(1));
+            });
+
+            function checkPasswordStrength(password) {
+                if (password.length < 5) {
+                    return 'weak';
+                } else if (password.length >= 5 && password.length <= 10) {
+                    return 'medium';
+                } else {
+                    return 'strong';
+                }
+            }
+        });
+    </script>
+</body>
+</html>

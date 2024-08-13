@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#container {
+  width: 300px;
+  height: 200px;
+  border: 1px solid #ccc;
+  position: relative;
+}
+
+#coordinates {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 14px;
+}
+</style>
+</head>
+<body>
+
+<div id="container">
+  <div id="coordinates"></div>
+</div>
+
+<script>
+const container = document.getElementById("container");
+const coordinates = document.getElementById("coordinates");
+
+container.addEventListener("mousemove", (event) => {
+  coordinates.textContent = `Mouse coordinates: ${event.clientX}, ${event.clientY}`;
+});
+</script>
+
+</body>
+</html>

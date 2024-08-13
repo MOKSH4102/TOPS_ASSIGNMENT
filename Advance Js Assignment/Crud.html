@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD with LocalStorage</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        input[type="text"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+        }
+
+        .items {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 200px;
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .item button {
+            background-color: transparent;
+            border: none;
+            color: #333;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>CRUD with LocalStorage</h1>
+
+    <input type="text" id="newItem" placeholder="Enter item">
+    <button id="addItem">Add Item</button>
+
+    <div class="items">
+        <h2>Items:</h2>
+        <div id="itemsContainer"></div>
+    </div>
+
+    <script>
+        const newItemInput = document.getElementById('newItem');
+        const addItemButton = document.getElementById('addItem');
+        const itemsContainer = document.getElementById('itemsContainer');
+
+        // Load items from LocalStorage
+        let items = loadItems();
+        displayItems();
+
+        // Add Item
+        addItemButton.addEventListener('click', () => {
+            const newItem = newItemInput.value.trim();
+            if (newItem !== '') {
+                items.push(newItem);
+                saveItems();
+                newItemInput.value = '';
+                displayItems();
+            }
+        });
+
+        // Edit Item
+        itemsContainer.addEventListener('click', (event) => {
+            if (event.target.classList.contains('edit')) {
+                const itemIndex = Array.from(itemsContainer.children).indexOf(event.target.parentElement.parentElement);
+                const currentItem = items[itemIndex];
+                const newItem = prompt('Edit Item:', currentItem);
+                if (newItem !== null && newItem !== '') {
+                    items[itemIndex] = newItem;
+                    saveItems();
+                    displayItems();
+                }
+            }
+        });
+
+        // Delete Item
+        itemsContainer.addEventListener('click', (event) => {
+            if (event.target.classList.contains('delete')) {
+                const itemIndex = Array.from(itemsContainer.children).indexOf(event.target.parentElement.parentElement);
+                items.splice(itemIndex, 1);
+                saveItems();
+                displayItems();
+            }
+        });
+
+        // Display Items
+        function displayItems() {
+            itemsContainer.innerHTML = '';
+            items.forEach((item, index) => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('item');
+                itemElement.innerHTML = `
+                    <span>${item}</span>
+                    <button class="edit">Edit</button>
+                    <button class="delete">Delete</button>
+                `;
+                itemsContainer.appendChild(itemElement);
+            });
+        }
+
+        // Save Items to LocalStorage
+        function saveItems() {
+            localStorage.setItem('items', JSON.stringify(items));
+        }
+
+        // Load Items from LocalStorage
+        function loadItems() {
+            const storedItems = localStorage.getItem('items');
+            return storedItems ? JSON.parse(storedItems) : [];
+        }
+    </script>
+</body>
+</html>

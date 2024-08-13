@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Delay function result using debouncing</title>
+<style>
+  body {
+    font-family: sans-serif;
+  }
+  #input {
+    width: 300px;
+    height: 30px;
+    border: 1px solid black;
+  }
+</style>
+</head>
+<body>
+  <h1>Delay function result using debouncing</h1>
+  <div>
+    <input type="text" id="input" placeholder="Type here">
+  </div>
+  <div id="output"></div>
+  <script>
+    const input = document.getElementById('input');
+    const output = document.getElementById('output');
+    let timeout;
+
+    const debounce = (func, delay) => {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+        func();
+      }, delay);
+    };
+
+    input.addEventListener('input', () => {
+      debounce(() => {
+        output.textContent = `You typed: ${input.value}`;
+      }, 100);
+    });
+  </script>
+</body>
+</html>

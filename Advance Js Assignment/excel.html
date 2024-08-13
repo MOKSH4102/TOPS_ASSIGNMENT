@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content=
+          "width=device-width, 
+          initial-scale=1.0">
+    <title>Table to Excel</title>
+    <!-- jQuery CDN -->
+    <script src=
+"https://code.jquery.com/jquery-3.6.4.min.js">
+    </script>
+    <!-- table2excel jQuery plugin CDN -->
+    <script src=
+"//cdn.rawgit.com/rainabba/jquery-table2excel/1.1.0/dist/jquery.table2excel.min.js">
+    </script>
+    <style>
+        #dwnldBtn{
+            background-color: green; 
+            color: #fff; 
+            padding: 10px; 
+            border: none;
+            border-radius: 5px; 
+            margin: 2rem 0;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <table id="dataTable" border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Country</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Alice</td>
+                    <td>30</td>
+                    <td>Usa</td>
+                    
+                </tr>
+                <tr>
+                    <td>Bob</td>
+                    <td>26</td>
+                    <td>America</td>
+                   
+                </tr>
+                <tr>
+                    <td>charlie</td>
+                    <td>25</td>
+                    <td>Uk</td>
+                    
+                </tr>
+            </tbody>
+        </table>
+
+        <button id="dwnldBtn">
+                Download Excel Sheet
+        </button>
+    </center>
+    <script>
+        $(document).ready(function () {
+            $('#dwnldBtn').on('click', function () {
+                $("#dataTable").table2excel({
+                    filename: "employeeData.xls"
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

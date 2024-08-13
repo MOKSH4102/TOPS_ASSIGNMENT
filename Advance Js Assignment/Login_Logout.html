@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Login/Logout</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.login-form {
+  display: block;
+}
+
+.welcome-message {
+  display: none;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="login-form">
+    <h2>Login</h2>
+    <input type="text" id="username" placeholder="Username" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button onclick="login()">Login</button>
+  </div>
+
+  <div class="welcome-message">
+    <h2>Welcome!</h2>
+    <p>You are now logged in.</p>
+    <button onclick="logout()">Logout</button>
+  </div>
+</div>
+
+<script>
+function login() {
+  // Check if the username and password are correct (replace with actual validation)
+  if (document.getElementById("username").value === "admin" && document.getElementById("password").value === "password") {
+    // Hide the login form and show the welcome message
+    document.querySelector(".login-form").style.display = "none";
+    document.querySelector(".welcome-message").style.display = "block";
+  } else {
+    alert("Invalid username or password.");
+  }
+}
+
+function logout() {
+  // Hide the welcome message and show the login form
+  document.querySelector(".welcome-message").style.display = "none";
+  document.querySelector(".login-form").style.display = "block";
+}
+</script>
+</body>
+</html>

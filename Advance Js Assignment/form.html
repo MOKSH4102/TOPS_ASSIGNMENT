@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+            width: 400px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4CAF50; /* Green */
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049; /* Darker Green */
+        }
+
+        .error {
+            color: red;
+            font-size: 14px;
+            margin-bottom: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Form Validation</h2>
+        <form id="myForm">
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+            <span class="error" id="fullNameError"></span>
+
+            <label for="email">Email Address:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email address">
+            <span class="error" id="emailError"></span>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password">
+            <span class="error" id="passwordError"></span>
+
+            <label for="confirmPassword">Confirm Password:</label>
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm your password">
+            <span class="error" id="confirmPasswordError"></span>
+
+            <label for="birthdate">Birth Date:</label>
+            <input type="date" id="birthdate" name="birthdate">
+            <span class="error" id="birthdateError"></span>
+
+            <label for="gender">Gender:</label>
+            <select id="gender" name="gender">
+                <option value="">Select your gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <span class="error" id="genderError"></span>
+
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        const form = document.getElementById('myForm');
+        const fullName = document.getElementById('fullName');
+        const email = document.getElementById('email');
+        const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('confirmPassword');
+        const birthdate = document.getElementById('birthdate');
+        const gender = document.getElementById('gender');
+
+        const fullNameError = document.getElementById('fullNameError');
+        const emailError = document.getElementById('emailError');
+        const passwordError = document.getElementById('passwordError');
+        const confirmPasswordError = document.getElementById('confirmPasswordError');
+        const birthdateError = document.getElementById('birthdateError');
+        const genderError = document.getElementById('genderError');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent default form submission
+
+            // Validate full name
+            if (fullName.value.trim() === '') {
+                fullNameError.textContent = 'Please enter your full name';
+                fullNameError.style.display = 'block';
+            } else {
+                fullNameError.style.display = 'none';
+            }
+
+            // Validate email address
+            if (email.value.trim() === '') {
+                emailError.textContent = 'Please enter your email address';
+                emailError.style.display = 'block';
+            } else if (!isValidEmail(email.value.trim())) {
+                emailError.textContent = 'Please enter a valid email address';
+                emailError.style.display = 'block';
+            } else {
+                emailError.style.display = 'none';
+            }
+
+            // Validate password
+            if (password.value.trim() === '') {
+                passwordError.textContent = 'Please enter your password';
+                passwordError.style.display = 'block';
+            } else if (password.value.trim().length < 8) {
+                passwordError.textContent = 'Password must be at least 8 characters long';
+                passwordError.style.display = 'block';
+            } else {
+                passwordError.style.display = 'none';
+            }
+
+            // Validate confirm password
+            if (confirmPassword.value.trim() === '') {
+                confirmPasswordError.textContent = 'Please confirm your password';
+                confirmPasswordError.style.display = 'block';
+            } else if (confirmPassword.value.trim() !== password.value.trim()) {
+                confirmPasswordError.textContent = 'Passwords do not match';
+                confirmPasswordError.style.display = 'block';
+            } else {
+                confirmPasswordError.style.display = 'none';
+            }
+
+            // Validate birthdate
+            if (birthdate.value.trim() === '') {
+                birthdateError.textContent = 'Please enter your birth date';
+                birthdateError.style.display = 'block';
+            } else {
+                birthdateError.style.display = 'none';
+            }
+
+            // Validate gender
+            if (gender.value.trim() === '') {
+                genderError.textContent = 'Please select your gender';
+                genderError.style.display = 'block';
+            } else {
+                genderError.style.display = 'none';
+            }
+
+            // If all fields are valid, submit the form
+            if (
+                fullNameError.style.display === 'none' &&
+                emailError.style.display === 'none' &&
+                passwordError.style.display === 'none' &&
+                confirmPasswordError.style.display === 'none' &&
+                birthdateError.style.display === 'none' &&
+                genderError.style.display === 'none'
+            ) {
+                // Form is valid, you can submit it here
+                alert('Form submitted successfully!');
+            }
+        });
+
+        function isValidEmail(email) {
+            // Regular expression for email validation
+            const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return re.test(email);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+.box1{
+  height: 500px;
+  width: 500px;
+  border: 1px solid black;
+ margin: 100px auto;
+ background-color: black;
+}
+.box2{
+  color:aqua ;
+  background-color: rgb(35, 35, 35);
+}
+.box3{
+  height: 217px;
+  color: black;
+  background-color: aqua;
+  align-content: center;
+}

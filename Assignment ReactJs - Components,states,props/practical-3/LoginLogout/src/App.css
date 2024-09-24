@@ -1,0 +1,48 @@
+.box1{
+  margin: 150px auto;
+  border-radius: 10px;
+  height: 300px;
+  width: 300px;
+  border: 1px solid black;
+  background-color: rgb(194, 190, 190);
+}
+.box2{
+  background-color: #2e7ff8;
+  height: 50px;
+  align-content: center;
+  text-align: center;
+  border-radius: 10px;
+  margin-top: 15px;
+}
+.text{
+  color: white;
+  align-content: center;
+  margin-right: 120px;
+ 
+}
+.btn{
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 10px;
+  font-size: 15px;
+  padding: 5px;
+  width: 80px;
+}
+.view{
+  height: 150px;
+  background-color: whitesmoke;
+  text-align: center;
+  align-content: center;
+  border-radius: 10px;
+  margin-top: 10px;
+  font-weight: 600;
+}
+.footer{
+  height: 50px;
+  background-color: #2e7ff8;
+  color: white;
+  text-align: center;
+  align-content: center;
+  border-radius: 10px;
+  margin-top: 15px;
+}

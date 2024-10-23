@@ -1,0 +1,46 @@
+(1) What is MongoDB
+
+=> MongoDB is an open-source document-oriented database that is designed to store a large scale of data and also allows you to work with that data very efficiently. It is categorized under the NoSQL (Not only SQL) database because the storage and retrieval of data in the MongoDB are not in the form of tables. 
+
+(2) What is difference between mongo DB and SQL
+
+=>  SQL databases use a relational data model, which means that data is organized into tables with predefined relationships between them. In contrast, MongoDB uses a document-based data model, where data is stored in JSON-like documents with dynamic schemas.
+
+(3) Create database for online shopping app.
+
+=> (I) User: use user
+   (II) Product Category : use Product Category
+   (iii) Product : use Product
+    (iv) Order Review : use Order Review
+
+(4) Create collections for online shopping
+
+=> db.createCollection(cart)
+   db.createCollection(user)
+db.createCollection(product)
+
+(5) Write down syntax for insert data
+
+=>  db.users.insertOne({name:"harsh",number:8214585692})
+ db.students.insertMany({name:"Jay",number:8288585692},{name:"Meet",number:8214585332})
+
+(6) How can I list all data from mongodb
+
+=> db.users.find()
+
+(7) How can I update data from mongodb
+
+=> db.users.updateOne({name:"Jay"},{$set:{number:8214585692}})
+
+(8)  Write command to show all data from product collections and sort in ascending order.
+
+=> db.products.find().sort({ pname: 1 })
+
+(9) Update product price for particular product.
+
+=> db.products.updateOne({name:"Fan"},{$set:{price:2500}})
+
+(10) Write command to delete particular document and collection
+
+=>  for particular document : db.users.deleteOne({name:"harsh",number:8214585692})
+    for collection : db.users.drop()

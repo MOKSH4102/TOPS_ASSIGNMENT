@@ -11,7 +11,8 @@ const App = ()=>{
 
     return <div className="container box1">
       <div className='box2'><span className='text'> Navigation</span>
-      <button onClick={handleLogin} className='btn btn-secondary'>{LoginIn?'Logout':'Login'}</button></div>
+      <button onClick={handleLogin} className='btn btn-secondary'>{LoginIn?'Logout':'Login'}</button>
+     </div>
       
       <div className='view'>{LoginIn?<span>Private Views</span>:<span>Public Views</span>}</div>
       <footer className='footer'>Footer</footer>

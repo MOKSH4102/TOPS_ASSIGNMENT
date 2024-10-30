@@ -1,0 +1,80 @@
+.main{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+  height: 100vh;
+}
+.second{
+ position: relative; 
+  height: 400px;
+  width: 400px;
+  background-color: whitesmoke;
+}
+.text{
+  margin-top: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  height: 100px;
+  align-content: center;
+  
+}
+.inputtag{
+  
+  height: 100px;
+
+}
+.inputtag input{
+  width: 80%;
+  padding: 5px;
+  margin-left: 25px;
+}
+.div1{
+  margin-bottom: 10px;
+
+}
+.div3 {
+  margin-left: 25px;
+}
+.div3 input{
+  margin-right: 10px;
+}
+.div3 label{
+  font-weight: 600;
+}
+.button{
+  height: 50px;
+  margin-top: 20px;
+}
+.button button{
+  width: 80%;
+  padding: 5px;
+  margin-left: 25px;
+  background-color: #ffc400 ;
+  color: white ;
+  border: none;
+}
+.text span{
+  position: absolute;
+  top: 7px;
+  cursor: pointer;
+}
+.button  :hover{
+  background-color: transparent;
+  color: #ffc400;
+  border: 2px solid #ffc400;
+}
+.text1{
+  margin-top: 10px;
+  text-align: center;
+  color: rgb(2, 2, 135);
+  cursor: pointer;
+}
+.text2{
+  margin-top: 20px;
+  text-align: center;
+  font-size: 15px;
+  color: rgb(1, 94, 128);
+  cursor: pointer;
+}
